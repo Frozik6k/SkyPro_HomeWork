@@ -16,9 +16,14 @@ public class Author {
     public String getSurname() {
         return this.surname;
     }
-
-    @Override
     public String toString() {
         return this.firstname + ' ' + this.surname;
+    }
+    public boolean equals(Author author) {
+        return this.firstname == author.getFirstname()
+            && this.surname   == author.getSurname();
+    }
+    public int hashCode() {
+        return firstname.hashCode() + surname.hashCode();
     }
 }
