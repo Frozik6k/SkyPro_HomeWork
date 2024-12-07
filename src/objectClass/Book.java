@@ -1,5 +1,7 @@
 package objectClass;
 
+import java.util.Objects;
+
 public class Book {
     private String name;
     private Author author;
@@ -27,14 +29,18 @@ public class Book {
         this.yearPublic = yearPublic;
     }
     public String toString() {
-        return this.name + ", " + this.author.toString() + ", год издания: " + yearPublic;
+        return this.name + ", " + this.author + ", год издания: " + yearPublic;
     }
-    public boolean equals(Book book) {
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Book book = (Book) other;
         return this.author.equals(book.author)
-            && this.name       == book.name
+            && this.name.equals(book.name)
             && this.yearPublic == book.yearPublic;
     }
     public int hashCode() {
-        return author.hashCode() + name.hashCode() + yearPublic;
+        return java.util.Objects.hash(author.hashCode(), name.hashCode(), yearPublic);
     }
 }

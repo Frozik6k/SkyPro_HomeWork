@@ -20,10 +20,10 @@ public class Author {
         return this.firstname + ' ' + this.surname;
     }
     public boolean equals(Author author) {
-        return this.firstname == author.getFirstname()
-            && this.surname   == author.getSurname();
+        return this.firstname.equals(author.getFirstname())
+            && this.surname.equals(author.getSurname());
     }
     public int hashCode() {
-        return firstname.hashCode() + surname.hashCode();
+        return java.util.Objects.hash(firstname.hashCode(), surname.hashCode());
     }
 }
