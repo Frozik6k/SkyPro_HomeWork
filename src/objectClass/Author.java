@@ -24,6 +24,6 @@ public class Author {
             && this.surname.equals(author.getSurname());
     }
     public int hashCode() {
-        return java.util.Objects.hash(firstname.hashCode(), surname.hashCode());
+        return java.util.Objects.hash(firstname, surname);
     }
 }

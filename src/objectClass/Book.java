@@ -41,6 +41,6 @@ public class Book {
             && this.yearPublic == book.yearPublic;
     }
     public int hashCode() {
-        return java.util.Objects.hash(author.hashCode(), name.hashCode(), yearPublic);
+        return java.util.Objects.hash(author, name, yearPublic);
     }
 }
